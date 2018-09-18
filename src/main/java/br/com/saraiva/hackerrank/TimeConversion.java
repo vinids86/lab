@@ -46,14 +46,24 @@ public class TimeConversion {
 	 * Complete the timeConversion function below.
 	 */
 	static String timeConversion(String s) {
-		// 07:05:45PM
 
 		final String[] time = s.split(":");
 		final String hours = time[0];
-		final String minutes = time[1];
-		final String seconds = time[2].substring(0, 2);
+		final String minAndSec = time[1] + ":" + time[2].substring(0, 2);
+		final String meridien = time[2].substring(2);
 
-        return Integer.valueOf(hours) + 12 + ":" + minutes + ":" + seconds;
+		final String resultHour = "PM".equals(meridien) ? getPMHours(hours)
+				: getAMHours(hours);
+		return resultHour + ":" + minAndSec;
+	}
+
+	private static String getPMHours(final String hours) {
+		return "12".equals(hours) ? hours : String.valueOf(Integer.valueOf(hours) + 12);
+	}
+
+	private static String getAMHours(final String hours) {
+		return !"12".equals(hours) ? hours
+				: String.format("%02d", Integer.valueOf(hours) - 12);
 	}
 
 	public static void main(String[] args) throws IOException {
