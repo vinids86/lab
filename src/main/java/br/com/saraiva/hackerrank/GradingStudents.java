@@ -3,6 +3,7 @@ package br.com.saraiva.hackerrank;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -44,18 +45,11 @@ public class GradingStudents {
 	 */
 	static int[] gradingStudents(int[] grades) {
 
-		int[] result = new int[grades.length];
-
-		for (int i = 0; i < grades.length; i++) {
-			if (grades[i] >= 38 && nextMultipleOf5(grades[i]) - grades[i] < 3) {
-				result[i] = nextMultipleOf5(grades[i]);
-			}
-			else {
-				result[i] = grades[i];
-			}
-		}
-
-		return result;
+		return Arrays.stream(grades)
+				.map(grade -> grade >= 38 && nextMultipleOf5(grade) - grade < 3
+						? nextMultipleOf5(grade)
+						: grade)
+				.toArray();
 	}
 
 	private static int nextMultipleOf5(int grade) {
