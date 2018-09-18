@@ -48,22 +48,22 @@ public class TimeConversion {
 	static String timeConversion(String s) {
 
 		final String[] time = s.split(":");
-		final String hours = time[0];
+		final String hour = time[0];
 		final String minAndSec = time[1] + ":" + time[2].substring(0, 2);
 		final String meridien = time[2].substring(2);
 
-		final String resultHour = "PM".equals(meridien) ? getPMHours(hours)
-				: getAMHours(hours);
+		final String resultHour = "PM".equals(meridien) ? getPMHours(hour)
+				: getAMHours(hour);
 		return resultHour + ":" + minAndSec;
 	}
 
-	private static String getPMHours(final String hours) {
-		return "12".equals(hours) ? hours : String.valueOf(Integer.valueOf(hours) + 12);
+	private static String getPMHours(final String hour) {
+		return "12".equals(hour) ? hour : String.valueOf(Integer.valueOf(hour) + 12);
 	}
 
-	private static String getAMHours(final String hours) {
-		return !"12".equals(hours) ? hours
-				: String.format("%02d", Integer.valueOf(hours) - 12);
+	private static String getAMHours(final String hour) {
+		return !"12".equals(hour) ? hour
+				: String.format("%02d", Integer.valueOf(hour) - 12);
 	}
 
 	public static void main(String[] args) throws IOException {
