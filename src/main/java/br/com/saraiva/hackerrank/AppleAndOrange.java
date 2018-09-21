@@ -1,5 +1,6 @@
 package br.com.saraiva.hackerrank;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -75,21 +76,13 @@ public class AppleAndOrange {
 	static void countApplesAndOranges(int starting, int ending, int appleTree,
 			int orangeTree, int[] apples, int[] oranges) {
 
-		int applesInTheHouse = 0;
-		int orangesInTheHouse = 0;
+		System.out.println(Arrays.stream(apples).filter(
+				apple -> appleTree + apple >= starting && appleTree + apple <= ending)
+				.count());
 
-		for (int apple : apples) {
-			if (appleTree + apple >= starting && appleTree + apple <= ending)
-				applesInTheHouse++;
-		}
-
-		for (int orange : oranges) {
-			if (orangeTree + orange <= ending && orangeTree + orange >= starting)
-				orangesInTheHouse++;
-		}
-
-		System.out.println(applesInTheHouse);
-		System.out.println(orangesInTheHouse);
+		System.out.println(
+				Arrays.stream(oranges).filter(orange -> orangeTree + orange <= ending
+						&& orangeTree + orange >= starting).count());
 	}
 
 	public static void main(String[] args) {
