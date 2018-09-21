@@ -74,8 +74,22 @@ public class AppleAndOrange {
 	// Complete the countApplesAndOranges function below.
 	static void countApplesAndOranges(int starting, int ending, int appleTree,
 			int orangeTree, int[] apples, int[] oranges) {
-		System.out.println(1);
-		System.out.println(1);
+
+		int applesInTheHouse = 0;
+		int orangesInTheHouse = 0;
+
+		for (int apple : apples) {
+			if (appleTree + apple >= starting && appleTree + apple <= ending)
+				applesInTheHouse++;
+		}
+
+		for (int orange : oranges) {
+			if (orangeTree + orange <= ending && orangeTree + orange >= starting)
+				orangesInTheHouse++;
+		}
+
+		System.out.println(applesInTheHouse);
+		System.out.println(orangesInTheHouse);
 	}
 
 	public static void main(String[] args) {

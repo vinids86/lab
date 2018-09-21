@@ -28,9 +28,25 @@ class AppleAndOrangeTest {
 	}
 
 	@Test
-	void out() {
+	void whenApplesAndOrangesFallsInTheHouse() {
 		int[] apples = { -2, 2, 1 };
 		int[] oranges = { 5, -6 };
+		AppleAndOrange.countApplesAndOranges(7, 11, 5, 15, apples, oranges);
+		assertEquals("1\n1\n", outContent.toString());
+	}
+
+	@Test
+	void whenApplesFallsAndExceedTheHouse() {
+		int[] apples = { -2, 2, 12 };
+		int[] oranges = { 5, -6 };
+		AppleAndOrange.countApplesAndOranges(7, 11, 5, 15, apples, oranges);
+		assertEquals("1\n1\n", outContent.toString());
+	}
+
+	@Test
+	void whenOrangesFallsAndExceedTheHouse() {
+		int[] apples = { -2, 2, 1 };
+		int[] oranges = { 5, -6, -9 };
 		AppleAndOrange.countApplesAndOranges(7, 11, 5, 15, apples, oranges);
 		assertEquals("1\n1\n", outContent.toString());
 	}
