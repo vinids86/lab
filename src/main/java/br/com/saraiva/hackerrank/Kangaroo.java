@@ -79,18 +79,6 @@ public class Kangaroo {
 			return "YES";
 		}
 
-		if (start1 > start2 && jump1 > jump2) {
-			return "NO";
-		}
-
-		if (start2 > start1 && jump2 > jump1) {
-			return "NO";
-		}
-
-		if (jump1 == jump2) {
-			return "NO";
-		}
-
 		int position1 = start1 + jump1;
 		int position2 = start2 + jump2;
 
