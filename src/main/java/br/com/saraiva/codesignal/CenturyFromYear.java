@@ -6,6 +6,6 @@ package br.com.saraiva.codesignal;
 class CenturyFromYear {
 
 	int centuryFromYear(int year) {
-		return 20;
+		return year % 100 == 0 ? year / 100 : year / 100 + 1;
 	}
 }
