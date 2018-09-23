@@ -73,7 +73,50 @@ public class Kangaroo {
 	private static final Scanner scanner = new Scanner(System.in);
 
 	// Complete the kangaroo function below.
-	static String kangaroo(int x1, int v1, int x2, int v2) {
+	static String kangaroo(int start1, int jump1, int start2, int jump2) {
+
+		if (start1 == start2) {
+			return "YES";
+		}
+
+		if (start1 > start2 && jump1 > jump2) {
+			return "NO";
+		}
+
+		if (start2 > start1 && jump2 > jump1) {
+			return "NO";
+		}
+
+		if (jump1 == jump2) {
+			return "NO";
+		}
+
+		int position1 = start1 + jump1;
+		int position2 = start2 + jump2;
+
+		if (position1 == position2) {
+			return "YES";
+		}
+
+		if (position1 < position2 && jump1 > jump2) {
+			while (position2 > position1) {
+				position1 += jump1;
+				position2 += jump2;
+				if (position1 == position2)
+					return "YES";
+			}
+		}
+
+		if (position1 > position2 && jump2 > jump1) {
+			while (position2 < position1) {
+				position1 += jump1;
+				position2 += jump2;
+				if (position1 == position2) {
+					return "YES";
+				}
+			}
+		}
+
 		return "NO";
 	}
 
