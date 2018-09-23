@@ -10,10 +10,19 @@ import org.junit.jupiter.api.Test;
 class AdjacentElementsProductTest {
 
 	@Test
-	void execute() {
+	void givenAnArrayOfIntegers_whenHasPositiveAndNegativeNumbers_thenReturnBiggest() {
 		final int[] input = { 3, 6, -2, -5, 7, 3 };
 		final int actual = new AdjacentElementsProduct().execute(input);
 		final int expected = 21;
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	void givenAnArrayOfIntegers_whenHasOnlyNegativeNumbers_thenReturnBiggest() {
+		final int[] input = { -1, -2 };
+		final int actual = new AdjacentElementsProduct().execute(input);
+		final int expected = 2;
 
 		assertEquals(expected, actual);
 	}
