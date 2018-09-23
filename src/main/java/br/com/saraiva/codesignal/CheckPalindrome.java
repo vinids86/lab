@@ -6,6 +6,10 @@ package br.com.saraiva.codesignal;
 class CheckPalindrome {
 
 	boolean execute(String inputString) {
-		return true;
+		StringBuilder reverse = new StringBuilder();
+		for (int i = inputString.length() - 1; i >= 0; i--) {
+			reverse.append(inputString.charAt(i));
+		}
+		return reverse.toString().equals(inputString);
 	}
 }

@@ -10,10 +10,19 @@ import org.junit.jupiter.api.Test;
 class CheckPalindromeTest {
 
 	@Test
-	void checkPalindrome() {
+	void givenAString_whenIsAPalindrome_thenReturnTrue() {
 		String input = "aabaa";
 		boolean actual = new CheckPalindrome().execute(input);
 		boolean expected = true;
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	void givenAString_whenIsNotAPalindrome_thenReturnFalse() {
+		String input = "abac";
+		boolean actual = new CheckPalindrome().execute(input);
+		boolean expected = false;
 
 		assertEquals(expected, actual);
 	}
