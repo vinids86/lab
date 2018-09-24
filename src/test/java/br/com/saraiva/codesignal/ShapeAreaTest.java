@@ -17,4 +17,13 @@ class ShapeAreaTest {
 
 		assertEquals(expected, actual);
 	}
+
+	@Test
+	void execute2() {
+		final int input = 3;
+		final int actual = new ShapeArea().execute(input);
+		final int expected = 13;
+
+		assertEquals(expected, actual);
+	}
 }

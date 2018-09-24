@@ -6,6 +6,13 @@ package br.com.saraiva.codesignal;
 class ShapeArea {
 
 	int execute(int n) {
-		return 5;
+		int area = 0;
+		for (int i = 0; i < n; i++) {
+			if (i == 0)
+				area += 1;
+			else
+				area += i * 4;
+		}
+		return area;
 	}
 }
