@@ -1,11 +1,14 @@
 package br.com.saraiva.codesignal;
 
+import java.util.Arrays;
+
 /**
  * Created by sara on set, 2018
  */
-public class MakeArrayConsecutive2 {
+class MakeArrayConsecutive2 {
 
 	int execute(int[] statues) {
-		return 3;
+		Arrays.sort(statues);
+		return statues[statues.length - 1] - statues[0] + 1 - statues.length;
 	}
 }

@@ -17,4 +17,13 @@ class MakeArrayConsecutive2Test {
 
 		assertEquals(expected, actual);
 	}
+
+	@Test
+	void execute2() {
+		final int[] input = { 0, 3 };
+		final int actual = new MakeArrayConsecutive2().execute(input);
+		final int expected = 2;
+
+		assertEquals(expected, actual);
+	}
 }
